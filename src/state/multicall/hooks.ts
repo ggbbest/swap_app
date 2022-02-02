@@ -165,7 +165,7 @@ export function useSingleContractMultipleData(
   options?: ListenerOptions
 ): CallState[] {
   const fragment = useMemo(() => contract?.interface?.getFunction(methodName), [contract, methodName])
-
+  console.log("##### 168 useSingleContractMultipleData #####/src/state/multicall/hooks.ts contract:["+contract?.address +"/"+contract?.signer +"]/methodName :"+methodName+"\n")
   const calls = useMemo(
     () =>
       contract && fragment && callInputs && callInputs.length > 0
@@ -222,7 +222,7 @@ export function useMultipleContractSingleData(
   const results = useCallsData(calls, options)
 
   const latestBlockNumber = useBlockNumber()
-
+  console.log("##### 225 #####/src/state/multicall/hooks.ts latestBlockNumber:"+latestBlockNumber)
   return useMemo(() => {
     return results.map(result => toCallState(result, contractInterface, fragment, latestBlockNumber))
   }, [fragment, results, contractInterface, latestBlockNumber])

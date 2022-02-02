@@ -31,14 +31,14 @@ export default function Pool() {
     () => trackedTokenPairs.map(tokens => ({ liquidityToken: toLiquidityToken(tokens), tokens })),
     [trackedTokenPairs]
   )
-for(let i=0;i<trackedTokenPairs.length;i++){
-console.log(
-  "\n=============== [" + i.toString() + "] trackedTokenPairs =================== \n"
-  + "["+ trackedTokenPairs[i][0].symbol  +"/" + trackedTokenPairs[i][1].symbol  +"]"
-  + "["+ trackedTokenPairs[i][0].name    +"/" + trackedTokenPairs[i][1].name    +"]"
-  + "["+ trackedTokenPairs[i][0].address +"/" + trackedTokenPairs[i][1].address +"]"
-  + "["+ trackedTokenPairs[i][0].chainId +"/" + trackedTokenPairs[i][1].chainId +"]")
-}
+// for(let i=0;i<trackedTokenPairs.length;i++){
+//   console.log(
+//     "\n=============== [" + i.toString() + "] trackedTokenPairs =================== \n"
+//     + "["+ trackedTokenPairs[i][0].symbol  +"/" + trackedTokenPairs[i][1].symbol  +"]"
+//     + "["+ trackedTokenPairs[i][0].name    +"/" + trackedTokenPairs[i][1].name    +"]"
+//     + "["+ trackedTokenPairs[i][0].address +"/" + trackedTokenPairs[i][1].address +"]"
+//     + "["+ trackedTokenPairs[i][0].chainId +"/" + trackedTokenPairs[i][1].chainId +"]")
+// }
   const liquidityTokens = useMemo(() => tokenPairsWithLiquidityTokens.map(tpwlt => tpwlt.liquidityToken), [
     tokenPairsWithLiquidityTokens
   ])
@@ -47,8 +47,12 @@ console.log(
     liquidityTokens
   ) 
   // console.log("liquidityTokens : "+liquidityTokens[0].name)
-
+  // console.log("v2PairsBalances"+v2PairsBalances)
+  // console.log("fetchingV2PairBalances"+fetchingV2PairBalances)
+  // fetchingV2PairBalances : { [tokenAddress: string]: TokenAmount | undefined; }
+  // v2PairsBalances : [tokenAddress: string]: TokenAmount | undefined;
   // fetch the reserves for all V2 pools in which the user has a balance
+
   const liquidityTokensWithBalances = useMemo(
     () => tokenPairsWithLiquidityTokens.filter(
         ({ liquidityToken }) => v2PairsBalances[liquidityToken.address]?.greaterThan('0')
@@ -70,7 +74,7 @@ console.log(
 // console.log("tokenPairsWithLiquidityTokens[0].liquidityToken.name : "+tokenPairsWithLiquidityTokens[0].liquidityToken.name)
 const v2Pairs = usePairs(liquidityTokensWithBalances.map(({ tokens }) => tokens))
 // console.log("v2Pairs.length:"+v2Pairs.length)
-let lqbal = liquidityTokensWithBalances.map(({ tokens }) => tokens) 
+// let lqbal = liquidityTokensWithBalances.map(({ tokens }) => tokens) 
 // console.log("lqbal.length : "+lqbal.length)
 const v2IsLoading =
 fetchingV2PairBalances || v2Pairs?.length < liquidityTokensWithBalances.length || v2Pairs?.some(V2Pair => !V2Pair)

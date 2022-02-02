@@ -58,7 +58,7 @@ export function useTokenBalancesWithLoadingIndicator(
   const validatedTokenAddresses = useMemo(() => validatedTokens.map(vt => vt.address), [validatedTokens])
 
   const balances = useMultipleContractSingleData(validatedTokenAddresses, ERC20_INTERFACE, 'balanceOf', [address])
-
+  console.log("##### 61 #####/src/state/wallet/hooks.ts balances:"+balances + " / validatedTokenAddresses:"+validatedTokenAddresses + " / ERC20_INTERFACE:"+ERC20_INTERFACE + " / address:"+address)
   const anyLoading: boolean = useMemo(() => balances.some(callState => callState.loading), [balances])
 
   return [
@@ -71,6 +71,7 @@ export function useTokenBalancesWithLoadingIndicator(
               if (amount) {
                 memo[token.address] = new TokenAmount(token, amount)
               }
+              // console.log("##### 74 #####/src/state/wallet/hooks.ts"+token.address + " / "+amount)
               return memo
             }, {})
           : {},

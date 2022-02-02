@@ -27,12 +27,14 @@ const initialState: ApplicationState = {
 export default createReducer(initialState, builder =>
   builder
     .addCase(updateBlockNumber, (state, action) => {
+      console.log("##### 30 createReducer ##### /src/state/application/reducer.ts updateBlockNumber : [action "+action+"]")
       const { chainId, blockNumber } = action.payload
       if (typeof state.blockNumber[chainId] !== 'number') {
         state.blockNumber[chainId] = blockNumber
       } else {
         state.blockNumber[chainId] = Math.max(blockNumber, state.blockNumber[chainId])
       }
+      console.log("##### 37 createReducer ##### /src/state/application/reducer.ts updateBlockNumber : [ "+state.blockNumber[chainId]+"]")
     })
     .addCase(toggleWalletModal, state => {
       state.walletModalOpen = !state.walletModalOpen
