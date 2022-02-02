@@ -1,0 +1,67 @@
+dev@ubuntu:~/www/swap.c4ei.net/sdk/1_WETH$ truffle migrate --reset --network c4ei
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'c4ei'
+> Network id:      21004
+> Block gas limit: 8000000 (0x7a1200)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xc819581c18a47ac7338818b97bba6ed5822e41cc20ac3d00f9080d9bb7a8b176
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x7249530B37aAD82383F672964f36e5CE7f4D14b0
+   > block number:        556805
+   > block timestamp:     1642745525
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749710997250.182587828067521536
+   > gas used:            225237 (0x36fd5)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001126185 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.001126185 ETH
+
+
+2_deploy_weth9.js
+=================
+
+   Deploying 'WETH9'
+   -----------------
+   > transaction hash:    0xc3caa17a3b699dd281b3905d5fa284d88b4ef0c50c8c0250dc345931ec2243bd
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x9783061644bd8F41944EF71a6A73FC575F5a2A96
+   > block number:        556808
+   > block timestamp:     1642745533
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749710997256.182587828067521536
+   > gas used:            822902 (0xc8e76)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00411451 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00411451 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.005240695 ETH

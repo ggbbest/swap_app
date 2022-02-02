@@ -1,0 +1,87 @@
+web3.personal.unlockAccount("0xad70df6bd78734721f42cd8ccace42b25d83aa65")
+
+
+yarn truffle-migrate
+
+dev@ubuntu:~/c4eiswap/core$ yarn truffle-migrate
+yarn truffle-migrate
+yarn run v1.22.17
+$ ./node_modules/.bin/truffle migrate --reset;
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      21004
+> Block gas limit: 8000000 (0x7a1200)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0xdccb2b29ee4109d61db85950f4352e54288d27fe7ea9cd9baa62d4e70b5f0833
+   > Blocks: 0            Seconds: 20
+   > contract address:    0x84245EA90614e1800e074BeA26FAe721797b9800
+   > block number:        415191
+   > block timestamp:     1640448919
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             12.058196331267521536
+   > gas used:            137422 (0x218ce)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00274844 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00274844 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing 'CroDefiSwapFactory'
+   ------------------------------
+   > transaction hash:    0x031e26c2b02a114827e4bc3122474366b5e1897a8637e5aecbaf418e1ebdcfbd
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0baEE3029DEBFcF63aE172460ECDeCdF72FcC047
+   > block number:        415193
+   > block timestamp:     1640448999
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749711084846.058196331267521536
+   > gas used:            3501481 (0x356da9)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.07002962 ETH
+
+Deployed CroDefiSwapFactory on network development with 0xad70df6bd78734721f42cd8ccace42b25d83aa65 as feeSetter
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.07002962 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.07277806 ETH
+
+
+Done in 71.20s.
+
+
+
+
+
+
+
+

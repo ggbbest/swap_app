@@ -1,0 +1,19 @@
+﻿/**
+ *Submitted for verification at Etherscan.io on 2020-09-11
+
+CroDefiSwapRouter02 --> 0xCeB90E4C17d626BE0fACd78b79c9c87d7ca181b3 
+--> swap.c4ei.net  Router --> 
+
+https://etherscan.io/address/0xCeB90E4C17d626BE0fACd78b79c9c87d7ca181b3#code
+Arg [0] : _factory (address): 0x9deb29c9a4c7a88a3c0257393b7f3335338d9a9d --> 0x0baEE3029DEBFcF63aE172460ECDeCdF72FcC047
+Arg [1] : _WETH (address): 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2  --> 0xE94b78D58826eca66a921cEc0E3Bc40BC6707897
+
+Contract Name: CroDefiSwapRouter02
+Compiler Version v0.6.6+commit.6c089d02
+Optimization Enabled: Yes with 999999 runs
+
+*/
+
+truffle compile
+truffle migrate --reset
+

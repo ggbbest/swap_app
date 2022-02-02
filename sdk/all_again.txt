@@ -1,0 +1,64 @@
+1. LP Pair token
+2. 팩토리
+3. 라우터
+
+./node_modules/.bin/truffle migrate --reset
+dev@ubuntu:~/c4eiswap/swap_project/1_swap-contracts-core$ truffle migrate --reset
+
+#################################
+cd /home/dev/www/farm_swap/swap.c4ei.net/sdk/1_WETH/
+#################################
+yarn
+truffle compile
+truffle migrate --reset --network c4ei
+
+_WETH 
+> contract address:    0x9783061644bd8F41944EF71a6A73FC575F5a2A96
+> transaction hash:    0xc3caa17a3b699dd281b3905d5fa284d88b4ef0c50c8c0250dc345931ec2243bd
+
+#################################
+cd /home/dev/www/farm_swap/swap.c4ei.net/sdk/2_Factory/
+#################################
+yarn
+truffle compile
+yarn truffle-migrate-c4ei
+
+   > contract address:    0x716fFab1f51b8abC65020d1FEc1eB34cC789957B
+   > transaction hash:    0xf9c5e83424f2294341bfe3c4b0c0a435fbc1f4a4826d436ef211e419527c6ce2
+
+#################################
+cd /home/dev/www/farm_swap/swap.c4ei.net/sdk/3_Router/
+#################################
+yarn
+
+truffle compile
+
+/home/dev/www/farm_swap/swap.c4ei.net/sdk/3_Router/contracts/libraries/CroDefiSwapLibrary.sol
+hex'69d637e77615df9f235f642acebbdad8963ef35c5523142078c9b8f9d0ceba7e' // init code hash  ??
+
+yarn truffle-migrate-c4ei
+
+   CroDefiSwapRouter02
+   > contract address:    0x75A32304Bfc8f061ee938227F8D2c2d8424afa40
+   > transaction hash:    0xd47d29fa301e3b9c219dcbfd91baf45da6aa72bc422c165c3b55bc1466a9e45c
+CroDefiSwapRouter02 deployed on c4ei with factoryAddress 0x716fFab1f51b8abC65020d1FEc1eB34cC789957B and wethAddress 0x9783061644bd8F41944EF71a6A73FC575F5a2A96
+
+
+/home/dev/www/farm_swap/swap.c4ei.net/.env
+/home/dev/www/farm_swap/swap.c4ei.net/local_modules/swap-sdk/.env
+
+cd /home/dev/www/farm_swap/swap.c4ei.net/local_modules/swap-sdk
+yarn build
+
+cd /home/dev/www/farm_swap/swap.c4ei.net/swap_app
+yarn
+yarn start
+
+
+deasync copy pre build file
+
+/home/dev/www/farm_swap/swap.c4ei.net/src/connectors/index.ts
+chainId: 1 --> 21004  ????
+
+
+https://i.ibb.co/DQd2GBF/c4eix256t-Logo.png

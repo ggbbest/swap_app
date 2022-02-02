@@ -1,0 +1,81 @@
+dev@ubuntu:~/www/swap.c4ei.net/sdk/1_WETH$ cd /home/dev/www/swap.c4ei.net/sdk/2_Factory/
+dev@ubuntu:~/www/swap.c4ei.net/sdk/2_Factory$ truffle compile
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+dev@ubuntu:~/www/swap.c4ei.net/sdk/2_Factory$ yarn truffle-migrate-c4ei
+yarn run v1.22.17
+$ ./node_modules/.bin/truffle migrate --reset --network c4ei
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'c4ei'
+> Network id:      21004
+> Block gas limit: 8000000 (0x7a1200)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x216ddd932122709db0c75d3a2b9254e2b1efc60a15ce1fe0bfc1340738091316
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x9Ec44b91E0B8e5A0D489233F40eDD1d626000954
+   > block number:        556857
+   > block timestamp:     1642745661
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749710997354.182587828067521536
+   > gas used:            137422 (0x218ce)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00068711 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00068711 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'CroDefiSwapFactory'
+   ------------------------------
+   > transaction hash:    0xf9c5e83424f2294341bfe3c4b0c0a435fbc1f4a4826d436ef211e419527c6ce2
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x716fFab1f51b8abC65020d1FEc1eB34cC789957B
+   > block number:        556859
+   > block timestamp:     1642745674
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749710997358.182587828067521536
+   > gas used:            3501493 (0x356db5)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.017507465 ETH
+
+Deployed CroDefiSwapFactory on network c4ei with 0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65 as feeSetter
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.017507465 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.018194575 ETH
+
+
+Done in 26.80s.
+dev@ubuntu:~/www/swap.c4ei.net/sdk/2_Factory$ 

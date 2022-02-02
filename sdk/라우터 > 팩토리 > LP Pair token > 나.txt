@@ -1,0 +1,20 @@
+3_swap-periphery-Router --> 
+Arg [0] : _factory (address): 0x0baEE3029DEBFcF63aE172460ECDeCdF72FcC047
+Arg [1] : _WETH (address): 0xc3B12E8d7FAa4e98001D97a2BC7342B9A959a159
+
+==================================
+라우터 > 팩토리 > LP Pair token > 나
+==================================
+transfer 와 approve는 기능이 다릅니다.
+transfer는 토큰을 전송하는 기능이고
+approve는 dex등에서 사용자의 토큰 전송에 대한 권한을 획득하기 위한것입니다 .
+
+liqudity를 한다고 가정했을 때, klay + kusdt 유동성공급을 할 때, kusdt, klay각각의 토큰에 대해서 approve를 해주게 되는데 이렇게되면 해당 dex(클레이스왑)에서 내 지갑에있는 ksudt와 klay를 동시에 가져갈 수 있게 되는것입니다.
+즉 DEX에서 해당 토큰들에 대한 approve로 권한 획득 > 이후 transfer를 통해 나의 지갑에서 유동성공급을 위해
+ router가 내 토큰을 전송하며 router에서는 나의 지갑으로 LP토큰을 주게됩니다
+
+라우터 > 팩토리 > LP Pair token > 나
+
+따라서 이더리움의 경우는 (클레이 등 EVM지원토큰) 스캠코인을 임의의 지갑주소로 전송 후, 
+해당 토큰을 팔 수 있는 것처럼하며 approve권한을 획득하려하는데 이때 자세히 보면 해당 스캠토큰의 approve말고 
+이더리움 등 다른 토큰에 대한 approve 권한도 가져가려 하는걸 볼수 있을겁니다.

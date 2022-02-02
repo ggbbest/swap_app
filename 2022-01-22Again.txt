@@ -1,0 +1,60 @@
+2022-01-22
+/home/dev/www/swap.c4ei.net/src/connectors/index.ts
+// mainnet only
+export const fortmatic = new FortmaticConnector({
+  apiKey: FORMATIC_KEY ?? '',
+  chainId: 1--> 21004
+})
+
+/home/dev/www/swap.c4ei.net/src/constants/multicall/index.ts
+  [ChainId.C4EI]: '0x84d291baBAE85f583dE187f7a46dA76e78cA2657'
+
+/home/dev/www/swap.c4ei.net/src/constants/v1/index.ts
+0xf74725Bda5Fb4E6Cc81929c8902e94ACA7ed2882  ???
+V1_FACTORY_ADDRESSES : 0x7A48fB7aEe4856f491E1b5c38b50f0aB1B01adC2
+/home/dev/www/swap.c4ei.net/sdk/UniFactoryV1_1filesmsize.sol
+
+CroDefiSwapRouter02.sol
+addLiquidity
+tokenA: 0x9E63f92c2D1F3826111846bAd89210293C7F4060
+tokenB: 0x1d187BbeCeF8d7b1731339c301ab8354d4F0A50b
+amountADesired: 1000000000000000000000
+amountBDesired: 1000000000000000000000
+amountAMin: 1000000000000000000000
+amountBMin: 1000000000000000000000
+to: address   --> factory make addr ????
+deadline :
+
+#######################
+crodefiswappair~~~~~~~~~~
+#######################
+DOMAIN_SEPARATOR : 0x5887b0e6c2b7d3d7c9ec19fa28253d2821ccdf42b9e8edcbddf19e67802cca6f
+????????????????? factory : 0x286A6CE75d9f623FfbA96fC2175FD5fbE2690746
+#######################
+tring: CRO Defi Swap
+
+Metadata of "crodefiswappair" was published successfully.
+A4_CroDefiSwapFactory_1file.sol : ipfs://QmTikRRHV151RmWsadTTVQBQYmWaruHQyRrtzcFXiSH69r
+metadata.json : ipfs://QmeVVaHBTrDXquU7z3oPJTjAf9EfMcKMkNf2GvUx196UjT
+#########################################
+0x114d336aa6944cdDdD81FFD6098C3DADb90f9F30
+#########################################
+status	true Transaction mined and execution succeed
+transaction hash	0x2659fc5ad5e5d3ba95cc838061394959e2a71c2ee1e163158952b37acc777b99
+from	0x286A6CE75d9f623FfbA96fC2175FD5fbE2690746
+to	CroDefiSwapPair.(constructor)
+gas	2625732 gas
+transaction cost	2625732 gas 
+hash	0x2659fc5ad5e5d3ba95cc838061394959e2a71c2ee1e163158952b37acc777b99
+input	0x608...37429
+decoded input	{}
+decoded output	 - 
+logs	[]
+val	0 wei
+
+/home/dev/www/swap.c4ei.net/src/constants/abis/BasicStakeContract.json
+/home/dev/www/swap.c4ei.net/src/constants/abis/crypto_router_abi.json
+/home/dev/www/swap.c4ei.net/src/constants/abis/PausableTokenMock.json
+/home/dev/www/swap.c4ei.net/src/constants/abis/mainnet/BasicStakeContract.json
+/home/dev/www/swap.c4ei.net/src/constants/abis/mainnet/crypto_router_abi.json
+

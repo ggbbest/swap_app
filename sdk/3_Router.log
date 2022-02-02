@@ -1,0 +1,74 @@
+dev@ubuntu:~/www/swap.c4ei.net$ cd /home/dev/www/farm_swap/swap.c4ei.net/sdk/3_Router/
+dev@ubuntu:~/www/swap.c4ei.net/sdk/3_Router$ yarn truffle-migrate-c4ei
+yarn run v1.22.17
+$ ./node_modules/.bin/truffle migrate --reset --network c4ei
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'c4ei'
+> Network id:      21004
+> Block gas limit: 8000000 (0x7a1200)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x6714b4fed9ee6a268c0d84fa2596119d53bbc56e2c1e20bbe2c7a364f4db33c5
+   > Blocks: 1            Seconds: 12
+   > contract address:    0xC3439eC92F0b4c0E2bf490979D460E776a34661c
+   > block number:        557665
+   > block timestamp:     1642748210
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749710998970.182587828067521536
+   > gas used:            137638 (0x219a6)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00068819 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00068819 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'CroDefiSwapRouter02'
+   -------------------------------
+   > transaction hash:    0xd47d29fa301e3b9c219dcbfd91baf45da6aa72bc422c165c3b55bc1466a9e45c
+   > Blocks: 1            Seconds: 4
+   > contract address:    0x75A32304Bfc8f061ee938227F8D2c2d8424afa40
+   > block number:        557668
+   > block timestamp:     1642748224
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749710998976.182587828067521536
+   > gas used:            4760777 (0x48a4c9)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.023803885 ETH
+
+CroDefiSwapRouter02 deployed on c4ei with factoryAddress 0x716fFab1f51b8abC65020d1FEc1eB34cC789957B and wethAddress 0x9783061644bd8F41944EF71a6A73FC575F5a2A96
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.023803885 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.024492075 ETH
+
+
+Done in 32.03s.
