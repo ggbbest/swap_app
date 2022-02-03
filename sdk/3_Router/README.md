@@ -27,3 +27,7 @@ CI (e.g. ropsten)
 `yarn deploy-preparation-ropsten`
 `yarn verify-init-code`
 `yarn truffle-migrate-ropsten`
+
+yarn deploy-preparation-c4ei
+yarn verify-init-code
+yarn truffle-migrate-c4ei

@@ -23,13 +23,19 @@ module.exports = {
   // for more details on how to specify configuration options!
   //
   networks: {
+    // mainnet: {
+    //   provider: () => provider,
+    //   network_id: "21004",
+    //   gas: 6000000,
+    //   gasPrice: 20000000000, // in 20 wei
+    // },
     // c4ei: {
     //   provider: () => provider,
     //   network_id: "21004",
     //   gas: 6000000,
-    //   gasPrice: 5000000000, // in wei
+    //   gasPrice: 20000000000, // in 20 wei
     // }
-    c4ei: {
+    mainnet: {
       host: "192.168.1.185",     // Localhost (default: none)
       port: 21004,            // Standard Ethereum port (default: none)
       network_id: "21004",       // Any network (default: none)

@@ -14,7 +14,7 @@ module.exports = async (deployer, network, account) => {
   // }
 
   // const coreFactoryJSON = JSON.parse(fs.readFileSync("./2_Factory/build/contracts/CroDefiSwapFactory.json", "utf8"));
-  const coreFactoryJSON = JSON.parse(fs.readFileSync("/home/dev/www/farm_swap/swap.c4ei.net/sdk/2_Factory/build/contracts/CroDefiSwapFactory.json", "utf8"));
+  const coreFactoryJSON = JSON.parse(fs.readFileSync("/home/dev/www/swap.c4ei.net/sdk/2_Factory/build/contracts/CroDefiSwapFactory.json", "utf8"));
   const coreFactoryNetwork = Object.keys(coreFactoryJSON.networks)[0];
   factoryAddress = coreFactoryJSON.networks[coreFactoryNetwork].address;
   assert(factoryAddress !== undefined && factoryAddress !== "");

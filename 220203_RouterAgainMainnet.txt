@@ -1,0 +1,72 @@
+/home/dev/www/swap.c4ei.net/sdk/3_Router/swap-contracts-core/migrations
+
+dev@ubuntu:~/www/swap.c4ei.net/sdk/3_Router$ yarn truffle-migrate-mainnet
+yarn run v1.22.17
+$ ./node_modules/.bin/truffle migrate --reset --network mainnet
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'mainnet'
+> Network id:      21004
+> Block gas limit: 8000000 (0x7a1200)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x33660507eaaa8b1fe9f6d073205d3b0468fb5efef7fa5e7c0b6fda4980f9f796
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x0C64298C7Ae3aBfC2763BFE96e87851d18f6Bbb5
+   > block number:        563196
+   > block timestamp:     1643898661
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749711010031.240340264067521536
+   > gas used:            137638 (0x219a6)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00068819 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00068819 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing 'CroDefiSwapRouter02'
+   -------------------------------
+   > transaction hash:    0x1a39d80b5cde2b733a9c49740b925beba88e6b14074389cc557a8d1581875859
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xDE661a13e659F729bf78AEdd62d703165fbeA5f8
+   > block number:        563198
+   > block timestamp:     1643898676
+   > account:             0xAd70df6Bd78734721F42CD8cCACe42b25D83Aa65
+   > balance:             83066749711010035.240340264067521536
+   > gas used:            4760789 (0x48a4d5)
+   > gas price:           5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.023803945 ETH
+
+CroDefiSwapRouter02 deployed on mainnet with factoryAddress 0x7142EC3c7Dd94741e5c64731689E05EA973B0e5a and wethAddress 0x9783061644bd8F41944EF71a6A73FC575F5a2A96
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.023803945 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.024492135 ETH
