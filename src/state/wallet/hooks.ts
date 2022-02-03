@@ -44,21 +44,29 @@ export function useETHBalances(
 }
 
 /**
- * Returns a map of token addresses to their eventually consistent token balances for a single account.
- */
+ * Returns a map of token addresses to their eventually consistent token balances for a single account.  */
 export function useTokenBalancesWithLoadingIndicator(
   address?: string,
   tokens?: (Token | undefined)[]
 ): [{ [tokenAddress: string]: TokenAmount | undefined }, boolean] {
+// console.log("##### 52 ##### /src/state/wallet/hooks.ts useTokenBalancesWithLoadingIndicator [ address : "+address + "/ tokens?.length:"+tokens?.length+" ] ")
+// console.log("##### 53 ##### /src/state/wallet/hooks.ts useTokenBalancesWithLoadingIndicator [ TokenAmount:"+TokenAmount+" ] ")
+// console.log("\n##### 54 ##### [] tokens =================== \n")
+// for(let i=0;i<tokens?.length;i++){
+//   console.log( i.toString() + "["+ tokens[i]?.symbol +"]"+ "["+ tokens[i]?.name    +"]"+ "["+ tokens[i]?.address +"]"
+//     + "["+ tokens[i]?.decimals +"]"+ "["+ tokens[i]?.chainId +"]" )
+// }
+
   const validatedTokens: Token[] = useMemo(
     () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false) ?? [],
     [tokens]
   )
+  // console.log("\n##### 64 ##### validatedTokens.length :"+validatedTokens.length)
 
   const validatedTokenAddresses = useMemo(() => validatedTokens.map(vt => vt.address), [validatedTokens])
 
   const balances = useMultipleContractSingleData(validatedTokenAddresses, ERC20_INTERFACE, 'balanceOf', [address])
-  console.log("##### 61 #####/src/state/wallet/hooks.ts balances:"+balances + " / validatedTokenAddresses:"+validatedTokenAddresses + " / ERC20_INTERFACE:"+ERC20_INTERFACE + " / address:"+address)
+  // console.log("##### 61 #####/src/state/wallet/hooks.ts balances:"+balances + " / validatedTokenAddresses:"+validatedTokenAddresses + " / ERC20_INTERFACE:"+ERC20_INTERFACE + " / address:"+address)
   const anyLoading: boolean = useMemo(() => balances.some(callState => callState.loading), [balances])
 
   return [
@@ -67,6 +75,7 @@ export function useTokenBalancesWithLoadingIndicator(
         address && validatedTokens.length > 0
           ? validatedTokens.reduce<{ [tokenAddress: string]: TokenAmount | undefined }>((memo, token, i) => {
               const value = balances?.[i]?.result?.[0]
+              // console.log("##### 70 #####/src/state/wallet/hooks.ts token:["+token.name+":"+token.symbol+":"+token.address+"] balances: "+balances?.[i]?.result?.[0] )
               const amount = value ? JSBI.BigInt(value.toString()) : undefined
               if (amount) {
                 memo[token.address] = new TokenAmount(token, amount)
@@ -105,6 +114,7 @@ export function useCurrencyBalances(
 
   const tokenBalances = useTokenBalances(account, tokens)
   const containsETH: boolean = useMemo(() => currencies?.some(currency => currency === ETHER) ?? false, [currencies])
+  // console.log("##### 109 #####/src/state/wallet/hooks.ts ["+containsETH + " ] ")
   const ethBalance = useETHBalances(containsETH ? [account] : [])
 
   return useMemo(

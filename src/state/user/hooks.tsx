@@ -155,6 +155,7 @@ export function usePairAdder(): (pair: Pair) => void {
  * @param tokenB the other token
  */
 export function toLiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
+  // console.log("##### 158 ##### /src/state/user/hooks.tsx toLiquidityToken: [tokenA :"+tokenA.name +"][tokenB :"+tokenB.name+"]"+tokenA.chainId )
   return new Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'CRO-SWAP', 'CRO Defi Swap')
 }
 
@@ -167,7 +168,7 @@ export function useTrackedTokenPairs(): [Token, Token][] {
 
   // pinned pairs
   const pinnedPairs = useMemo(() => (chainId ? PINNED_PAIRS[chainId] ?? [] : []), [chainId])
-
+  // console.log("##### 171 ##### /src/state/user/hooks.tsx useTrackedTokenPairs: [chainId :"+chainId +"]")
   // pairs for every token against every base
   const generatedPairs: [Token, Token][] = useMemo(
     () =>

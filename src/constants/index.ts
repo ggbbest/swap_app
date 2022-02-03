@@ -9,10 +9,14 @@ type ChainTokenList = {
 
 export const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
 export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
-export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597C13D831ec7', 6, 'USDT', 'Tether USD')
 export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound')
 export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', 18, 'MKR', 'Maker')
 export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
+export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597C13D831ec7', 6, 'USDT', 'Tether USD')
+
+export const CERU = new Token(ChainId.C4EI, '0xd6aA777083834A4E64B12770c4579B35baaA4075', 18, 'CERU', 'CERU')
+export const WC4EI = new Token(ChainId.C4EI, '0x9E63f92c2D1F3826111846bAd89210293C7F4060', 18, 'WC4EI', 'Wrap C4EI')
+export const cUSDT = new Token(ChainId.C4EI, '0x735920302f009b945A6E0c32b14c771e1E30ce97', 6, 'USDT', 'Tether USD')
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
@@ -26,6 +30,7 @@ const WETH_ONLY: ChainTokenList = {
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR]
+  ,[ChainId.C4EI]: [...WETH_ONLY[ChainId.C4EI], cUSDT, CERU, WC4EI]
 }
 
 /**
@@ -33,32 +38,37 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  * tokens.
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
-  [ChainId.MAINNET]: {
-    [AMPL.address]: [DAI, WETH[ChainId.MAINNET]]
-  }
+  [ChainId.MAINNET]: { [AMPL.address]: [DAI, WETH[ChainId.MAINNET]] }
+  ,[ChainId.C4EI]: { [CERU.address]: [WC4EI, WETH[ChainId.C4EI]] }
 }
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  ...WETH_ONLY,
+  ...WETH_ONLY, 
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
+  , [ChainId.C4EI]: [...WETH_ONLY[ChainId.C4EI], CERU, cUSDT]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
+  ...WETH_ONLY, [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT]
+  , [ChainId.C4EI]: [...WETH_ONLY[ChainId.C4EI], CERU]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.MAINNET]: [
-    [
-      new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
-      new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin')
-    ],
+    [ new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
+      new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin') ],
     [USDC, USDT],
     [DAI, USDT]
   ]
+  ,[ChainId.C4EI]: 
+    [ [ new Token(ChainId.C4EI, '0xd6aA777083834A4E64B12770c4579B35baaA4075', 8, 'CERU', 'Compound C4EI')
+        ,new Token(ChainId.C4EI, '0x9E63f92c2D1F3826111846bAd89210293C7F4060', 8, 'WC4EI', 'Wrap C4EI') 
+      ],
+      [WC4EI, cUSDT]
+    , [CERU, cUSDT]
+    ]
 }
 
 export interface WalletInfo {

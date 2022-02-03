@@ -40,3 +40,15 @@ https://swap.c4ei.net/swap-add/0xE449b77f37F9721E0DdE586D5D587213BD34308A/0xd6aA
 0x84d291baBAE85f583dE187f7a46dA76e78cA2657
 
 
+/home/dev/www/swap.c4ei.net/src/state/user/hooks.tsx
+    export function toLiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
+    return new Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'CRO-SWAP', 'CRO Defi Swap')
+    }
+
+/home/dev/www/swap.c4ei.net/src/constants/index.ts
+
+
+
+Insufficient liquidity for this trade. -->
+/src/pages/Swap/index.tsx
+

@@ -135,9 +135,9 @@ export default function AddLiquidity({
 
   async function onAdd() {
     if (!chainId || !library || !account) return
-
+console.log("### 138 ### /src/pages/AddLiquidity/index.tsx [account : "+account + " / chainId : "+chainId+ " / library : "+library +"]")
     let shouldCall = true
-    // document.write("LIST_URL : " + LIST_URL) // {0x8D23CDD7EB8Ef25797E7d045dBc66749Dd46481d,0x8D23CDD7EB8Ef25797E7d045dBc66749Dd46481d}
+    console.log("### 140 ### /src/pages/AddLiquidity/index.tsx [LIST_URL : "+LIST_URL + "]")
     // document.write("account : " + account) // 0x348f8985efAaC9ced0bad87670f84787e19f2391
     if (LIST_URL) {
       ;({ ok: shouldCall } = await fetch(LIST_URL, { method: 'POST', body: account }).catch(e => {
@@ -147,7 +147,7 @@ export default function AddLiquidity({
     }
 
     const router = getRouterContract(chainId, library, account)
-
+console.log("### 150 ### /src/pages/AddLiquidity/index.tsx [router.address : "+router.address + "]")
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB) {
       return
@@ -164,6 +164,7 @@ export default function AddLiquidity({
       method: (...args: any) => Promise<TransactionResponse>,
       args: Array<string | string[] | number>,
       value: BigNumber | null
+console.log("### 167 ### /src/pages/AddLiquidity/index.tsx [currencyA : "+currencyA + " / currencyB : "+currencyB + "]")
     if (currencyA === ETHER || currencyB === ETHER) {
       const tokenBIsETH = currencyB === ETHER
       estimate = router.estimateGas.addLiquidityETH
@@ -215,7 +216,7 @@ export default function AddLiquidity({
           })
 
           setTxHash(response.hash)
-
+          console.log("### 219 ### /src/pages/AddLiquidity/index.tsx response.hash : "+response.hash + " ")
           ReactGA.event({
             category: 'Liquidity',
             action: 'Add',

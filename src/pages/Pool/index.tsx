@@ -46,6 +46,9 @@ export default function Pool() {
     account ?? undefined,
     liquidityTokens
   ) 
+  //#########################################################################################
+  // v2PairsBalances = [tokenAddress: string]: TokenAmount | undefined;
+  //#########################################################################################
   // console.log("liquidityTokens : "+liquidityTokens[0].name)
   // console.log("v2PairsBalances"+v2PairsBalances)
   // console.log("fetchingV2PairBalances"+fetchingV2PairBalances)
@@ -59,10 +62,15 @@ export default function Pool() {
       ),
     [tokenPairsWithLiquidityTokens, v2PairsBalances]
   )
+  //#########################################################################################
+  // liquidityTokensWithBalances: { liquidityToken: Token; tokens: [Token, Token]; }[]
+  //#########################################################################################
   // console.log("v2PairsBalances : "+tokenPairsWithLiquidityTokens.forEach(Token; tokens: [Token, Token]; }, index: number, array: { liquidityToken: Token; tokens: [Token, Token]; }[]) ))
   // console.log("v2PairsBalances : "+v2PairsBalances[1]?.token.name)
   // console.log("liquidityTokens[5].address : "+ liquidityTokens[5].address)
   liquidityTokensWithBalances.push()
+console.log("##### 66 ##### /src/pages/Pool/index.tsx liquidityTokensWithBalances:"+liquidityTokensWithBalances ) 
+
 // // let i=liquidityTokens.length;
 // for(let i=0;i<tokenPairsWithLiquidityTokens.length;i++)
 // {

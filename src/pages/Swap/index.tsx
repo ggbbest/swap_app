@@ -148,6 +148,7 @@ export default function Swap() {
   const userHasSpecifiedInputOutput = Boolean(
     currencies[Field.INPUT] && currencies[Field.OUTPUT] && parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0))
   )
+  console.log("##### 151 ##### /src/pages/Swap/index.tsx userHasSpecifiedInputOutput:"+currencies[Field.INPUT]?.symbol +" / "+parsedAmounts[independentField]) 
   const noRoute = !route
 
   // check whether the user has approved the router on the input token

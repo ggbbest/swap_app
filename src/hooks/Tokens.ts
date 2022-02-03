@@ -12,6 +12,7 @@ import { useBytes32TokenContract, useTokenContract } from './useContract'
 export function useAllTokens(): { [address: string]: Token } {
   const { chainId } = useActiveWeb3React()
   const userAddedTokens = useUserAddedTokens()
+  // console.log("##### 15 ##### /src/hooks/Tokens.ts userAddedTokens : "+userAddedTokens +"/ chainId :"+chainId)
   const allTokens = useSelectedTokenList()
 
   return useMemo(() => {
@@ -30,6 +31,7 @@ export function useAllTokens(): { [address: string]: Token } {
         )
     )
   }, [chainId, userAddedTokens, allTokens])
+
 }
 
 // parse a name or symbol from a token response
