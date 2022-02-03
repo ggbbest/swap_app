@@ -137,7 +137,7 @@ export default function AddLiquidity({
     if (!chainId || !library || !account) return
 // console.log("### 138 ### /src/pages/AddLiquidity/index.tsx [account : "+account + " / chainId : "+chainId+ " / library : "+library +"]")
     let shouldCall = true
-    // console.log("### 140 ### /src/pages/AddLiquidity/index.tsx [LIST_URL : "+LIST_URL + "]")
+// console.log("### 140 ### /src/pages/AddLiquidity/index.tsx [LIST_URL : "+LIST_URL + "]")
     // document.write("account : " + account) // 0x348f8985efAaC9ced0bad87670f84787e19f2391
     if (LIST_URL) {
       ;({ ok: shouldCall } = await fetch(LIST_URL, { method: 'POST', body: account }).catch(e => {
@@ -157,7 +157,7 @@ export default function AddLiquidity({
       [Field.CURRENCY_A]: calculateSlippageAmount(parsedAmountA, noLiquidity ? 0 : allowedSlippage)[0],
       [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? 0 : allowedSlippage)[0]
     }
-
+// console.log("### 160 ### /src/pages/AddLiquidity/index.tsx amountsMin : [A:"+[Field.CURRENCY_A]?.values + "][B:"+[Field.CURRENCY_B]?.values + "]")
     const deadlineFromNow = Math.ceil(Date.now() / 1000) + deadline
 
     let estimate,
@@ -395,9 +395,9 @@ export default function AddLiquidity({
               id="add-liquidity-input-tokenb"
               showCommonBases
             />
-            {
+            {/* {
               console.log("### 399 /src/pages/AddLiquidity/index.tsx ### pairState : "+pairState+"["+currencies[Field.CURRENCY_A]?.symbol+"/"+currencies[Field.CURRENCY_B]?.symbol+"]")
-            }
+            } */}
             {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
               <>
                 <GreyCard padding="0px" borderRadius={'20px'}>
@@ -422,6 +422,9 @@ export default function AddLiquidity({
               <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
             ) : (
               <AutoColumn gap={'md'}>
+{/* {
+console.log("### 426 /src/pages/AddLiquidity/index.tsx ### approvalA : "+approvalA+"/ approvalB : "+approvalB+"]")
+} */}
                 {(approvalA === ApprovalState.NOT_APPROVED ||
                   approvalA === ApprovalState.PENDING ||
                   approvalB === ApprovalState.NOT_APPROVED ||
