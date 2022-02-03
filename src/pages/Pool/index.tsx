@@ -20,6 +20,7 @@ import { usePairs } from '../../data/Reserves'
 import { toLiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import AppBody from '../AppBody'
 import { Dots } from '../../components/swap/styleds'
+import { Token } from 'graphql/language/ast'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -58,18 +59,26 @@ export default function Pool() {
 
   const liquidityTokensWithBalances = useMemo(
     () => tokenPairsWithLiquidityTokens.filter(
-        ({ liquidityToken }) => v2PairsBalances[liquidityToken.address]?.greaterThan('0')
+        // ({ liquidityToken }) => v2PairsBalances[liquidityToken.address]?.greaterThan('0')
+        ({ liquidityToken }) => v2PairsBalances[liquidityToken.address]?.toFixed(3)
       ),
     [tokenPairsWithLiquidityTokens, v2PairsBalances]
   )
-  //#########################################################################################
+  // console.log("##### 66 ##### /src/pages/Pool/index.tsx "+tokenPairsWithLiquidityTokens.length)
+  // console.log("##### 67 ##### /src/pages/Pool/index.tsx tokenPairsWithLiquidityTokens:"+tokenPairsWithLiquidityTokens.forEach((liquidityToken, i) => {
+  //   console.log(
+  //     liquidityToken.tokens[i][0].name +"/"+ liquidityToken.tokens[i][0].address +"/"+ liquidityToken.tokens[i][0].decimals+"//"+
+  //     liquidityToken.tokens[i][1].name +"/"+ liquidityToken.tokens[i][1].address +"/"+ liquidityToken.tokens[i][1].decimals+"//"
+  //   )
+  // })
+  //  ) 
   // liquidityTokensWithBalances: { liquidityToken: Token; tokens: [Token, Token]; }[]
   //#########################################################################################
   // console.log("v2PairsBalances : "+tokenPairsWithLiquidityTokens.forEach(Token; tokens: [Token, Token]; }, index: number, array: { liquidityToken: Token; tokens: [Token, Token]; }[]) ))
   // console.log("v2PairsBalances : "+v2PairsBalances[1]?.token.name)
   // console.log("liquidityTokens[5].address : "+ liquidityTokens[5].address)
   liquidityTokensWithBalances.push()
-console.log("##### 66 ##### /src/pages/Pool/index.tsx liquidityTokensWithBalances:"+liquidityTokensWithBalances ) 
+// console.log("##### 72 ##### /src/pages/Pool/index.tsx liquidityTokensWithBalances:"+liquidityTokensWithBalances ) 
 
 // // let i=liquidityTokens.length;
 // for(let i=0;i<tokenPairsWithLiquidityTokens.length;i++)
@@ -88,8 +97,10 @@ const v2IsLoading =
 fetchingV2PairBalances || v2Pairs?.length < liquidityTokensWithBalances.length || v2Pairs?.some(V2Pair => !V2Pair)
 
 const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
-
-// // // let i=liquidityTokens.length;
+console.log("### 100 ### /src/pages/Pool/index.tsx : "+ v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair)) + " ")
+console.log("### 101 ### /src/pages/Pool/index.tsx : "+ v2Pairs.map(([, pair]) => console.log("pair:"+pair)) + " ")
+// console.log("### 102 ### /src/pages/Pool/index.tsx : "+ v2Pairs.map(([, pair]) => pair))
+// let i=liquidityTokens.length;
 // for(let i=0;i<liquidityTokens.length;i++)
 // {
 //   console.log(i+" ["+liquidityTokens[i].name +"]\n["+liquidityTokens[i].symbol +"]\n["+liquidityTokens[i].address+"]\n["+liquidityTokens[i].chainId+"]")

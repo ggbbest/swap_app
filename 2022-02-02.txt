@@ -47,8 +47,18 @@ https://swap.c4ei.net/swap-add/0xE449b77f37F9721E0DdE586D5D587213BD34308A/0xd6aA
 
 /home/dev/www/swap.c4ei.net/src/constants/index.ts
 
-
-
 Insufficient liquidity for this trade. -->
 /src/pages/Swap/index.tsx
 
+
+/src/pages/Pool/index.tsx
+allV2PairsWithLiquidity?.length > 0 ?
+    {allV2PairsWithLiquidity.map(v2Pair => (<FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />))}
+:   No liquidity found.
+
+/src/components/SearchModal/CommonBases.tsx
+ETH --> C4EI 
+/src/components/SearchModal/CurrencySearch.tsx
+
+Add Liquidity --> Supply
+/src/pages/AddLiquidity/index.tsx

@@ -135,9 +135,9 @@ export default function AddLiquidity({
 
   async function onAdd() {
     if (!chainId || !library || !account) return
-console.log("### 138 ### /src/pages/AddLiquidity/index.tsx [account : "+account + " / chainId : "+chainId+ " / library : "+library +"]")
+// console.log("### 138 ### /src/pages/AddLiquidity/index.tsx [account : "+account + " / chainId : "+chainId+ " / library : "+library +"]")
     let shouldCall = true
-    console.log("### 140 ### /src/pages/AddLiquidity/index.tsx [LIST_URL : "+LIST_URL + "]")
+    // console.log("### 140 ### /src/pages/AddLiquidity/index.tsx [LIST_URL : "+LIST_URL + "]")
     // document.write("account : " + account) // 0x348f8985efAaC9ced0bad87670f84787e19f2391
     if (LIST_URL) {
       ;({ ok: shouldCall } = await fetch(LIST_URL, { method: 'POST', body: account }).catch(e => {
@@ -147,7 +147,7 @@ console.log("### 138 ### /src/pages/AddLiquidity/index.tsx [account : "+account 
     }
 
     const router = getRouterContract(chainId, library, account)
-console.log("### 150 ### /src/pages/AddLiquidity/index.tsx [router.address : "+router.address + "]")
+// console.log("### 150 ### /src/pages/AddLiquidity/index.tsx [router.address : "+router.address + "]")
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB) {
       return
@@ -164,7 +164,7 @@ console.log("### 150 ### /src/pages/AddLiquidity/index.tsx [router.address : "+r
       method: (...args: any) => Promise<TransactionResponse>,
       args: Array<string | string[] | number>,
       value: BigNumber | null
-console.log("### 167 ### /src/pages/AddLiquidity/index.tsx [currencyA : "+currencyA + " / currencyB : "+currencyB + "]")
+// console.log("### 167 ### /src/pages/AddLiquidity/index.tsx [currencyA : "+currencyA.symbol + " / currencyB : "+currencyB.symbol + "]")
     if (currencyA === ETHER || currencyB === ETHER) {
       const tokenBIsETH = currencyB === ETHER
       estimate = router.estimateGas.addLiquidityETH
@@ -216,12 +216,13 @@ console.log("### 167 ### /src/pages/AddLiquidity/index.tsx [currencyA : "+curren
           })
 
           setTxHash(response.hash)
-          console.log("### 219 ### /src/pages/AddLiquidity/index.tsx response.hash : "+response.hash + " ")
+          // console.log("### 219 ### /src/pages/AddLiquidity/index.tsx response.hash : "+response.hash + " ")
           ReactGA.event({
             category: 'Liquidity',
             action: 'Add',
             label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/')
           })
+          ////RNT/BCW //console.log("### 225 ### /src/pages/AddLiquidity/index.tsx response.hash : "+[currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/') + " ")
         })
       )
       .catch(error => {
@@ -394,6 +395,9 @@ console.log("### 167 ### /src/pages/AddLiquidity/index.tsx [currencyA : "+curren
               id="add-liquidity-input-tokenb"
               showCommonBases
             />
+            {
+              console.log("### 399 /src/pages/AddLiquidity/index.tsx ### pairState : "+pairState+"["+currencies[Field.CURRENCY_A]?.symbol+"/"+currencies[Field.CURRENCY_B]?.symbol+"]")
+            }
             {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
               <>
                 <GreyCard padding="0px" borderRadius={'20px'}>

@@ -64,6 +64,11 @@ export function CurrencySearch({
     return s === '' || s === 'e' || s === 'et' || s === 'eth'
   }, [searchQuery])
 
+  // const showC4EI: boolean = useMemo(() => {
+  //   const s = searchQuery.toLowerCase().trim()
+  //   return s === '' || s === 'c' || s === 'c4' || s === 'c4e' || s === 'c4ei'
+  // }, [searchQuery])
+
   const tokenComparator = useTokenComparator(invertSearchOrder)
 
   const filteredTokens: Token[] = useMemo(() => {
@@ -166,6 +171,7 @@ export function CurrencySearch({
             <CurrencyList
               height={height}
               showETH={showETH}
+              // showETH={showC4EI}
               currencies={filteredSortedTokens}
               onCurrencySelect={handleCurrencySelect}
               otherCurrency={otherSelectedCurrency}

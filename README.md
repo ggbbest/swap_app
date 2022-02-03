@@ -18,7 +18,7 @@ Please update the .env file to ensure full functionality.
 
 ```bash
 
-cd /home/dev/www/farm_swap/swap.c4ei.net/local_modules/swap-sdk
+cd /home/dev/www/swap.c4ei.net/local_modules/swap-sdk
 yarn build
 ```
 
