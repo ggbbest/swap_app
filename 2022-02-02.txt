@@ -63,3 +63,8 @@ ETH --> C4EI
 Add Liquidity --> Supply
 /src/pages/AddLiquidity/index.tsx
 CroDefiSwapRouter02 : 0x8D23CDD7EB8Ef25797E7d045dBc66749Dd46481d
+
+220203_RouterAgainMainnet.txt
+##############################
+Factory 가 FeeSetter 일까 ?
+##############################
